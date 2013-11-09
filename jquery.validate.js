@@ -218,11 +218,11 @@ $.extend($.validator, {
 		errorClass: "error",
 		validClass: "valid",
 		errorElement: "label",
-		focusInvalid: true,
+		focusInvalid: false,
 		errorContainer: $([]),
 		errorLabelContainer: $([]),
 		onsubmit: true,
-		ignore: ":hidden",
+		ignore: "",
 		ignoreTitle: false,
 		onfocusin: function( element, event ) {
 			this.lastActive = element;
@@ -1106,7 +1106,6 @@ $.extend($.validator, {
 
 		// http://docs.jquery.com/Plugins/Validation/Methods/equalTo
 		equalTo: function( value, element, param ) {
-			debugger;
 			// bind to the blur event of the target in order to revalidate whenever the target field is updated
 			// TODO find a way to bind the event just once, avoiding the unbind-rebind overhead
 			var target = $(param);
